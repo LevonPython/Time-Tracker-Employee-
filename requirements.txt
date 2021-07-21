@@ -1,3 +1,5 @@
+tkinter
+psycopg2
 django
 gunicorn
 django-heroku
