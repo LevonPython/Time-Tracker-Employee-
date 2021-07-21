@@ -1,4 +1,3 @@
-tkinter
 psycopg2
 django
 gunicorn
