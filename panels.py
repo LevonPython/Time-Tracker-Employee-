@@ -4,6 +4,10 @@ import time, datetime, calendar
 import re, os, psycopg2, subprocess
 from tkWindow import tkWindow
 
+"""
+Creating app... done, ⬢ aqueous-oasis-25031
+https://aqueous-oasis-25031.herokuapp.com/ | https://git.heroku.com/aqueous-oasis-25031.git
+"""
 PROC = subprocess.Popen('heroku config:get DATABASE_URL -a employee-time-tracker', stdout=subprocess.PIPE, shell=True)
 DB_URL = PROC.stdout.read().decode('utf-8').strip() + '?sslmode=require'
 
