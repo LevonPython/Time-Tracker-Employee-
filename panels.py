@@ -5,14 +5,16 @@ import re, os, psycopg2, subprocess
 from tkWindow import tkWindow
 
 """
-Creating app... done, ⬢ aqueous-oasis-25031
-https://aqueous-oasis-25031.herokuapp.com/ | https://git.heroku.com/aqueous-oasis-25031.git
+Creating app... done, ⬢ lit-forest-50169
+ | https://git.heroku.com/lit-forest-50169.git
 """
-PROC = subprocess.Popen('heroku config:get DATABASE_URL -a employee-time-tracker', stdout=subprocess.PIPE, shell=True)
+PROC = subprocess.Popen('heroku config:get postgresql-elliptical-21080 -a lit-forest-50169', stdout=subprocess.PIPE, shell=True)
+print(f"PROC: {PROC}")
 DB_URL = PROC.stdout.read().decode('utf-8').strip() + '?sslmode=require'
-
+print(f"DB_URL: {DB_URL}")
+print(f"DB_URL read: {PROC.stdout}")
 try:
-    cnx = psycopg2.connect(DB_URL, sslmode='require')
+    cnx = psycopg2.connect("postgres://krpwswhvgegorf:fe4909221574a8fe616626a1cbf3ae5e1beeba51d1d40f2002d635ca1f8a0763@ec2-3-233-100-43.compute-1.amazonaws.com:5432/dd261umaqv9adn", sslmode='require')
     cursor = cnx.cursor()
 except:
     print("Connection to database failed.")
