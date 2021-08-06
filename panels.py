@@ -52,7 +52,9 @@ class main_win():
                        "l_name varchar(100)," \
                        "role varchar(50)," \
                        "dob date);"
+        query_insert = "INSERT INTO users VALUES (100, 'Levon', 'Yeghiazaryan', 'administrator', '08.11.1990'), (101, 'Lida', 'Muradyan', 'lawyer', '10.04.1998');"
         cursor.execute(query_create)
+        # cursor.execute(query_insert)
 
     def check_code(self, value):
         if value == 'DELETE':
